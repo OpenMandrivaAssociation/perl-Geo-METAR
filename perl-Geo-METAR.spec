@@ -1,6 +1,6 @@
 Name:           perl-%realname
 Version:        1.14
-Release:        %mkrel 4
+Release:        %mkrel 5
 %define realname        Geo-METAR
 
 License:        GPL
