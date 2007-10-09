@@ -5,7 +5,7 @@ Release:        %mkrel 5
 
 License:        GPL
 Group:          Development/Perl
-Summary:        Geo::METAR - Process aviation weather reports in the METAR format.
+Summary:        Geo::METAR - Process aviation weather reports in the METAR format
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Math/%{realname}-%{version}.tar.bz2
 Url:            http://www.cpan.org
 Prefix:         %{_prefix}
