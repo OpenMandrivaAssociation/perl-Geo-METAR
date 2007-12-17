@@ -9,10 +9,8 @@ Summary:        Geo::METAR - Process aviation weather reports in the METAR forma
 Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Math/%{realname}-%{version}.tar.bz2
 Url:            http://www.cpan.org
 Prefix:         %{_prefix}
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  perl-devel gmp-devel
 Requires:       perl
-BuildRoot:      %{_tmppath}/%{name}-%{version}-root
 BuildArch:      noarch
 
 %description
