@@ -1,16 +1,17 @@
-Name:           perl-%realname
-Version:        1.14
-Release:        %mkrel 5
-%define realname        Geo-METAR
+%define module  Geo-METAR
+%define name    perl-%{module}
+%define version 1.15
+%define release %mkrel 1
 
+Name:           %{name}
+Version:        %{version}
+Release:        %{release}
+Summary:        Process aviation weather reports in the METAR format
 License:        GPL
 Group:          Development/Perl
-Summary:        Geo::METAR - Process aviation weather reports in the METAR format
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Math/%{realname}-%{version}.tar.bz2
-Url:            http://www.cpan.org
-Prefix:         %{_prefix}
-BuildRequires:  perl-devel gmp-devel
-Requires:       perl
+URL:            http://search.cpan.org/dist/%{module}
+Source:         http://www.cpan.org/modules/by-module/Geo/%{module}-%{version}.tar.gz
+BuildRequires:  gmp-devel
 BuildArch:      noarch
 
 %description
@@ -20,26 +21,25 @@ for non-pilots, these reports are relatively useles to the
 common man who just wants a quick glace at the weather.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{module}-%{version}
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" echo | %{__perl} Makefile.PL INSTALLDIRS=vendor
+%{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %__make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc TODO README MANIFEST examples/*
-%dir %{perl_vendorlib}/Geo
-%{perl_vendorlib}/Geo/METAR.pm
+%doc TODO README examples/*
+%{perl_vendorlib}/Geo
 %{_mandir}/*/*
 
