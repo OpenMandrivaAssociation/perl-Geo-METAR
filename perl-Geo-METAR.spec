@@ -9,6 +9,7 @@ Release:        %{release}
 Summary:        Process aviation weather reports in the METAR format
 License:        GPL
 Group:          Development/Perl
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 URL:            http://search.cpan.org/dist/%{module}
 Source:         http://www.cpan.org/modules/by-module/Geo/%{module}-%{version}.tar.gz
 BuildRequires:  gmp-devel
