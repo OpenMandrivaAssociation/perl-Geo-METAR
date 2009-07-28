@@ -1,19 +1,19 @@
-%define module  Geo-METAR
-%define name    perl-%{module}
-%define version 1.15
-%define release %mkrel 3
+%define upstream_name    Geo-METAR
+%define upstream_version 1.15
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Process aviation weather reports in the METAR format
-License:        GPL
-Group:          Development/Perl
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Geo/%{module}-%{version}.tar.gz
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Process aviation weather reports in the METAR format
+License:    GPL
+Group:      Development/Perl
+URL:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Geo/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:  gmp-devel
-BuildArch:      noarch
+BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 METAR reports are available on-line, thanks to the National
@@ -22,7 +22,7 @@ for non-pilots, these reports are relatively useles to the
 common man who just wants a quick glace at the weather.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
