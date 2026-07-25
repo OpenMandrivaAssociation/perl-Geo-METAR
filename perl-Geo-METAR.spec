@@ -2,14 +2,14 @@
 %define upstream_version 1.15
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%{upstream_version}
+Release:	5
 
 Summary:	Process aviation weather reports in the METAR format
 License:	GPL
 Group:		Development/Perl
-URL:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Geo/%{upstream_name}-%{upstream_version}.tar.gz
+URL:		https://metacpan.org/dist/Geo-METAR
+Source0:	https://cpan.metacpan.org/authors/id/K/KO/KOOS/Geo-METAR-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
