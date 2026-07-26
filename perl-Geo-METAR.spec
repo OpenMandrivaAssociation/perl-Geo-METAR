@@ -1,15 +1,13 @@
 %define upstream_name    Geo-METAR
-%define upstream_version 1.15
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	1.15
+Release:	6
 
 Summary:	Process aviation weather reports in the METAR format
 License:	GPL
 Group:		Development/Perl
 URL:		https://metacpan.org/dist/Geo-METAR
-Source0:	https://cpan.metacpan.org/authors/id/K/KO/KOOS/Geo-METAR-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/K/KO/KOOS/Geo-METAR-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -23,7 +21,7 @@ for non-pilots, these reports are relatively useles to the
 common man who just wants a quick glace at the weather.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -43,8 +41,7 @@ make test
 %changelog
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 1.150.0-1mdv2010.0
 + Revision: 401658
-- rebuild using %%perl_convert_version
-- fixed license field
+- rebuild using %1.15 fixed license field
 
 * Thu Jul 31 2008 Thierry Vignaud <tvignaud@mandriva.com> 1.15-3mdv2009.0
 + Revision: 257090
